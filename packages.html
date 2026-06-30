@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wedding Packages | Jieliezer Sapanta Photography</title>
+    <meta
+      name="description"
+      content="Explore wedding photography packages from budget to premium, plus booking options."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Jieliezer Sapanta Photography</a>
+      <nav class="site-nav">
+        <a href="index.html#top">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="packages.html">Wedding Packages</a>
+        <a href="index.html#testimonials">Reviews</a>
+        <a href="index.html#booking">Booking</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="packages-page">
+      <section class="section packages" id="packages">
+        <div class="section-heading">
+          <p class="eyebrow">Wedding Packages</p>
+          <h2>Wedding packages designed for every celebration.</h2>
+        </div>
+        <p class="package-intro">
+          Choose from budget-friendly coverage to full premium wedding collections.
+          Each package includes expertly shot photos, thoughtful editing, and reliable delivery.
+        </p>
+        <div class="package-grid">
+          <article class="package-card package-blue">
+            <div class="package-card-top">Budget Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>Full wedding coverage from prep until reception</li>
+                <li>1 photographer</li>
+                <li>Unlimited photos</li>
+                <li>Online gallery delivery</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+          <article class="package-card package-brown">
+            <div class="package-card-top">Basic Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>Full wedding coverage from prep until reception</li>
+                <li>1 photographer + 1 assistant</li>
+                <li>Unlimited photos</li>
+                <li>Online gallery delivery</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+          <article class="package-card package-teal">
+            <div class="package-card-top">Standard Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>Full wedding coverage from prep until reception</li>
+                <li>2 photographers</li>
+                <li>Same Day Edit slideshow</li>
+                <li>Engagement session included</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+          <article class="package-card package-gold">
+            <div class="package-card-top">Premium Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>Full wedding coverage from prep until reception</li>
+                <li>3 photographers</li>
+                <li>Edited images on USB + online gallery</li>
+                <li>20-page photobook included</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+          <article class="package-card package-cyan">
+            <div class="package-card-top">Pre-Wedding Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>4-5 hours of photography at your chosen location</li>
+                <li>1 photographer + assistant</li>
+                <li>All edited photos delivered online</li>
+                <li>Romantic styling and natural posing</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+          <article class="package-card package-rose">
+            <div class="package-card-top">Honeymoon Package</div>
+            <div class="package-card-body">
+              <ul>
+                <li>4-5 hours of photography at your chosen location</li>
+                <li>1 photographer + assistant</li>
+                <li>Unlimited high-resolution images on USB</li>
+                <li>Hair and makeup coordination support</li>
+              </ul>
+              <a class="button border-button" href="#booking-form">Book Now</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section booking-section" id="booking-form">
+        <div class="section-heading">
+          <p class="eyebrow">Booking</p>
+          <h2>Reserve your chosen package.</h2>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form" id="package-booking-form">
+            <label>
+              Name
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Chosen Package
+              <input type="text" name="package" placeholder="Selected package name" />
+            </label>
+            <label>
+              Wedding Date
+              <input type="text" name="date" placeholder="Month / Year" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5"></textarea>
+            </label>
+            <button class="button primary" type="submit">Send Booking Request</button>
+            <p class="form-status" aria-live="polite"></p>
+          </form>
+          <div class="contact-details">
+            <h3>Let’s make your wedding story unforgettable.</h3>
+            <p>Email: hello@jieliezersapanta.com</p>
+            <p>Phone: +63 917 000 0000</p>
+            <p>Available for Cebu and destination weddings nationwide.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a href="admin.html" class="footer-admin-link">Admin</a>
+    </footer>
+
+    <script>
+      const form = document.getElementById('package-booking-form');
+      const status = form.querySelector('.form-status');
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const data = new FormData(form);
+        const name = data.get('name')?.toString().trim() || 'there';
+        const chosenPackage = data.get('package')?.toString().trim() || 'a package';
+        const email = data.get('email')?.toString().trim() || '';
+        const date = data.get('date')?.toString().trim() || 'Not specified';
+        const message = data.get('message')?.toString().trim() || '';
+
+        const subject = encodeURIComponent(`Package booking request from ${name}`);
+        const body = encodeURIComponent(
+          `Name: ${name}\nEmail: ${email}\nPackage: ${chosenPackage}\nWedding Date: ${date}\n\nMessage:\n${message}`
+        );
+
+        status.textContent = `Thanks, ${name}! Opening your email app for ${chosenPackage}.`;
+        window.location.href = `mailto:hello@jieliezersapanta.com?subject=${subject}&body=${body}`;
+        form.reset();
+      });
+    </script>
+  </body>
+</html>

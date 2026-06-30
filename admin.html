@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin | Jieliezer Sapanta Photography</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="index.html">Jieliezer Sapanta Photography</a>
+      <nav class="site-nav">
+        <a href="index.html">Main Page</a>
+        <a href="admin.html">Admin</a>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="admin-card">
+        <div class="section-heading">
+          <p class="eyebrow">Admin Panel</p>
+          <h2>Add a new portfolio post</h2>
+        </div>
+
+        <form id="admin-form" class="admin-form">
+          <input type="hidden" id="post-id" />
+          <label>
+            Title
+            <input type="text" id="title" required />
+          </label>
+          <label>
+            Category
+            <select id="category">
+              <option value="engagement">Engagement</option>
+              <option value="family">Family</option>
+              <option value="proposal">Proposal</option>
+              <option value="wedding">Real Weddings</option>
+            </select>
+          </label>
+          <label>
+            Description
+            <textarea id="description" rows="4"></textarea>
+          </label>
+          <label>
+            Image URL
+            <input type="url" id="image-url" placeholder="https://example.com/image.jpg" />
+          </label>
+          <label>
+            Upload Image
+            <input type="file" id="image-file" accept="image/*" />
+          </label>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Save Post</button>
+            <button class="button secondary" type="button" id="cancel-edit">Cancel Edit</button>
+          </div>
+          <p id="admin-status" class="form-status"></p>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <div class="section-heading">
+          <p class="eyebrow">Current Posts</p>
+          <h2>Manage your gallery</h2>
+        </div>
+        <div id="admin-post-list" class="admin-list"></div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
