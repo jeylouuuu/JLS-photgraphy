@@ -115,7 +115,7 @@ img {
   position: relative;
   background:
     linear-gradient(110deg, rgba(4, 9, 16, 0.95), rgba(4, 9, 16, 0.55)),
-    url("https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1800&q=80") center/cover;
+    url("background.jpg") center/cover;
   color: white;
 }
 
@@ -749,6 +749,15 @@ blockquote footer {
 @media (max-width: 980px) {
   .hero-content {
     grid-template-columns: 1fr;
+  }
+
+  .upload-form {
+    grid-template-columns: 1fr;
+  }
+
+  .upload-form label:nth-child(4),
+  .upload-actions {
+    grid-column: auto;
   }
 
   .portfolio-grid {

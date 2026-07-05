@@ -1,4 +1,3 @@
-const filters = document.querySelectorAll('.filter');
 const form = document.getElementById('contact-form');
 const status = document.querySelector('.form-status');
 const portfolioGrid = document.getElementById('portfolio-grid');
@@ -11,6 +10,29 @@ const STORAGE_KEY = 'jieliezer-posts';
 let galleryItems = [];
 let currentLightboxIndex = 0;
 let activeFilter = 'all';
+
+async function getStoredPosts() {
+  try {
+    // Always fetch from server first to get latest uploads
+    const response = await fetch('/api/images');
+    if (!response.ok) {
+      throw new Error('Unable to load gallery');
+    }
+    const posts = await response.json();
+    if (Array.isArray(posts) && posts.length > 0) {
+      // Save to localStorage for offline access
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
+      return posts;
+    }
+    
+    // If server has no posts, check localStorage
+    const localPosts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    return localPosts;
+  } catch (error) {
+    // If fetch fails, use localStorage
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+  }
+}
 
 function getFilteredItems() {
   return activeFilter === 'all'
@@ -47,8 +69,8 @@ function showNextImage() {
   openLightbox();
 }
 
-function renderPortfolio() {
-  const posts = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+async function renderPortfolio() {
+  const posts = await getStoredPosts();
   const fallback = [
     { id: 'demo-1', title: 'Caohagan Island Pre-Wedding Session', category: 'engagement', image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80', description: 'Engagement' },
     { id: 'demo-2', title: 'Plantation Bay Family Portraits', category: 'family', image: 'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80', description: 'Family' },
@@ -82,19 +104,30 @@ function renderPortfolio() {
       openLightbox();
     });
   });
-  filters.forEach((button) => {
-    button.addEventListener('click', () => {
-      filters.forEach((item) => item.classList.remove('active'));
-      button.classList.add('active');
 
-      activeFilter = button.dataset.filter;
-      const filter = activeFilter;
-      cards.forEach((card) => {
-        const category = card.dataset.category;
-        const matches = filter === 'all' || filter === category;
-        card.classList.toggle('is-hidden', !matches);
+  applyFilters();
+}
+
+function applyFilters() {
+  const filters = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.portfolio-card');
+
+  filters.forEach((button) => {
+    if (!button.dataset.filterListenerAttached) {
+      button.addEventListener('click', () => {
+        filters.forEach((item) => item.classList.remove('active'));
+        button.classList.add('active');
+
+        activeFilter = button.dataset.filter;
+        const filter = activeFilter;
+        cards.forEach((card) => {
+          const category = card.dataset.category;
+          const matches = filter === 'all' || filter === category;
+          card.classList.toggle('is-hidden', !matches);
+        });
       });
-    });
+      button.dataset.filterListenerAttached = true;
+    }
   });
 }
 

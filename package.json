@@ -1,0 +1,20 @@
+{
+  "name": "jieliezer-sapanta-photography",
+  "version": "1.0.0",
+  "description": "Cebu wedding photographer portfolio with photo upload storage",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "photography",
+    "wedding",
+    "cebu"
+  ],
+  "author": "Jieliezer Sapanta",
+  "license": "ISC",
+  "engines": {
+    "node": "18.x"
+  }
+}

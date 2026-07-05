@@ -1,0 +1,18 @@
+[
+  {
+    "id": "c270d1f7-61c2-4978-91cb-80bdb40d7a48",
+    "title": "wedding chruch in paris",
+    "category": "wedding",
+    "description": "the anas nas",
+    "image": "/uploads/1783217593525-f877166b-3361-4c57-89d1-932a999a6ea6.jpg",
+    "createdAt": "2026-07-05T02:13:13.529Z"
+  },
+  {
+    "id": "65445d4d-0bb0-44e7-bf27-223fd7b05ed5",
+    "title": "awaw",
+    "category": "proposal",
+    "description": "asa",
+    "image": "/uploads/1783217417889-d846873e-881d-4551-9a52-df4bce6b12d7.jpg",
+    "createdAt": "2026-07-05T02:10:17.893Z"
+  }
+]

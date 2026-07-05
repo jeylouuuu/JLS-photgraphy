@@ -24,6 +24,41 @@
     <main class="admin-shell">
       <section class="admin-card">
         <div class="section-heading">
+          <p class="eyebrow">Upload Photos</p>
+          <h2>Add photos to your gallery</h2>
+        </div>
+
+        <form id="photo-upload-form" class="admin-form">
+          <label>
+            <span>Photo title</span>
+            <input type="text" name="title" placeholder="Beach portrait" required />
+          </label>
+          <label>
+            <span>Category</span>
+            <select name="category">
+              <option value="engagement">Engagement</option>
+              <option value="family">Family</option>
+              <option value="proposal">Proposal</option>
+              <option value="wedding">Real Weddings</option>
+            </select>
+          </label>
+          <label>
+            <span>Choose image</span>
+            <input type="file" name="image" accept="image/*" required />
+          </label>
+          <label>
+            <span>Description</span>
+            <textarea name="description" rows="3" placeholder="Add a short note about the photo"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button primary" type="submit">Save image</button>
+            <p id="upload-status" class="form-status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="admin-card">
+        <div class="section-heading">
           <p class="eyebrow">Admin Panel</p>
           <h2>Add a new portfolio post</h2>
         </div>
@@ -72,6 +107,7 @@
       </section>
     </main>
 
+    <script src="admin-upload.js"></script>
     <script src="admin.js"></script>
   </body>
 </html>
